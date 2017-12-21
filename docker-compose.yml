@@ -1,0 +1,25 @@
+version: "2"
+services:
+  nginx:
+    container_name: apache
+    image: registry.cn-hangzhou.aliyuncs.com/jren/php:5.6-apache-debian
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      # 代码目录
+      - ./www:/var/www/html
+      # apache配置
+      - ./config/apache2:/etc/apache2
+      # php.ini配置目录
+      - ./config/php:/usr/local/etc
+      # composer
+      - ./config/composer:/usr/local/bin/composer
+      # supervisor配置
+      - ./config/supervisor/conf.d:/etc/supervisor/conf.d
+      # 日志目录
+      - ./logs:/logs
+    environment:
+      - APACHE_LOG_DIR=/logs
+      - PHPRC=/usr/local/etc/php
+

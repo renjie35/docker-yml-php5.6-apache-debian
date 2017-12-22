@@ -10,7 +10,7 @@ services:
       # 代码目录
       - ./www:/var/www/html
       # apache配置
-      - ./config/apache2:/etc/apache2
+      - ./config/apache2/sites-available:/etc/apache2/sites-available
       # php.ini配置目录
       - ./config/php:/usr/local/etc
       # composer

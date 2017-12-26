@@ -11,6 +11,7 @@ services:
       - ./www:/var/www/html
       # apache配置
       - ./config/apache2/sites-available:/etc/apache2/sites-available
+      - ./config/apache2/sites-available:/etc/apache2/sites-enabled
       - ./config/apache2/apache2.conf:/etc/apache2/apache2.conf
       # php.ini配置目录
       - ./config/php:/usr/local/etc
@@ -23,4 +24,5 @@ services:
     environment:
       - APACHE_LOG_DIR=/logs
       - PHPRC=/usr/local/etc/php
+
 

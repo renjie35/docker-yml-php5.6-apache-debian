@@ -21,6 +21,8 @@ services:
       - ./config/supervisor/conf.d:/etc/supervisor/conf.d
       # 日志目录
       - ./logs:/logs
+      # crontab配置
+      - ./config/crontab:/var/spool/cron/crontabs
     environment:
       - APACHE_LOG_DIR=/logs
       - PHPRC=/usr/local/etc/php

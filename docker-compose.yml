@@ -22,7 +22,9 @@ services:
       # 日志目录
       - ./logs:/logs
       # crontab配置
-      - ./config/crontab:/var/spool/cron/crontabs
+      - ./config/crontab:/crontabs
+      # 默认启动项
+      - ./config/start.sh:/start.sh
     environment:
       - APACHE_LOG_DIR=/logs
       - PHPRC=/usr/local/etc/php

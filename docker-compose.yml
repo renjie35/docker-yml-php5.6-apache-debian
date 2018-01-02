@@ -25,8 +25,11 @@ services:
       - ./config/crontab:/crontabs
       # 默认启动项
       - ./config/start.sh:/start.sh
+      # oracle配置
+      - ./config/oracle:/oracle
     environment:
       - APACHE_LOG_DIR=/logs
       - PHPRC=/usr/local/etc/php
+      - TNS_ADMIN=/oracle
 
 
